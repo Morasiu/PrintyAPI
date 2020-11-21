@@ -23,6 +23,8 @@ namespace PrintyApi {
 
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services) {
+			services.AddCors();
+
 			services.AddControllers()
 				.AddFluentValidation(a => {
 					a.RegisterValidatorsFromAssemblyContaining<Startup>();
@@ -50,12 +52,22 @@ namespace PrintyApi {
 
 			app.UseRouting();
 
+			app.UseCors(builder => builder
+				.WithOrigins(
+					"http://localhost:8080",
+					"http://localhost:8081",
+					"http://localhost:1024")
+				.SetIsOriginAllowedToAllowWildcardSubdomains()
+				.AllowAnyMethod()
+				.AllowAnyHeader()
+				.AllowCredentials());
+
 			app.UseAuthorization();
 
 			app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
 
 			app.UseSwagger();
-			
+
 			app.UseSwaggerUI(c => {
 				c.RoutePrefix = string.Empty;
 				c.SwaggerEndpoint("/swagger/v1/swagger.json", "Printy API");
