@@ -16,6 +16,51 @@ namespace PrintyApi.Services {
 						Street = "Krakowska", 
 						ZipCode = "31-062",
 						City = "Kraków"
+					},
+					Services = new List<PrintService> {
+						new PrintService {
+							Dimension = Dimension.TwoDimensional,
+							Size = PrintSize.A4,
+							Color = PrintColor.BlackAndWhite,
+							PrintMaterial = PrintMaterial.StandardPaper,
+							Price = 0.20m
+						},
+						new PrintService {
+							Dimension = Dimension.TwoDimensional,
+							Size = PrintSize.A4,
+							Color = PrintColor.Colored,
+							PrintMaterial = PrintMaterial.StandardPaper,
+							Price = 0.60m
+						}
+					}
+				},
+				new Printer {
+					Name = "Michał - druk 3D",
+					Email = "michal@gmail.com",
+					Latitude = 50.05656237616528, 
+					Longitude = 19.94217038753566,
+					PhoneNumber = "123456789",
+					Address = new Address {
+						StreetNumber = "6",
+						Street = "Świętego Sebastiana", 
+						ZipCode = "31-049",
+						City = "Kraków"
+					},
+					Services = new List<PrintService> {
+						new PrintService {
+							Dimension = Dimension.ThreeDimensional,
+							PrintMaterial = PrintMaterial.PlasticAbs,
+							Color = PrintColor.PlasticGray,
+							Size = PrintSize.To6Cm,
+							Price = 10m,
+						},
+						new PrintService {
+							Dimension = Dimension.ThreeDimensional,
+							PrintMaterial = PrintMaterial.PlasticAbs,
+							Color = PrintColor.PlasticGray,
+							Size = PrintSize.To9Cm,
+							Price = 15m,
+						}
 					}
 				},
 				new Printer {
@@ -32,19 +77,6 @@ namespace PrintyApi.Services {
 						City = "Kraków"
 					}
 				},
-				new Printer {
-					Name = "Michał",
-					Email = "michal@gmail.com",
-					Latitude = 50.05656237616528, 
-					Longitude = 19.94217038753566,
-					PhoneNumber = "123456789",
-					Address = new Address {
-						StreetNumber = "6",
-						Street = "Świętego Sebastiana", 
-						ZipCode = "31-049",
-						City = "Kraków"
-					}
-				}
 			};
 
 			for (int i = 0; i < printers.Count; i++) {
