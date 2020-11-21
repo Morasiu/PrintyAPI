@@ -4,7 +4,7 @@ using PrintyApi.Models.Printers;
 namespace PrintyApi.Models.Orders {
 	public class Order {
 		public int Id { get; set; }
-		public int BuyerId { get; set; } = 1;
+		public int BuyerId { get; } = 1;
 		public int PrinterId { get; set; }
 		public List<PrintInfo> PrintInfos { get; set; }
 	}
