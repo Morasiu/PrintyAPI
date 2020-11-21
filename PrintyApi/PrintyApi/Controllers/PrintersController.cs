@@ -12,6 +12,7 @@ namespace PrintyApi.Controllers {
 		public PrintersController(PrintersRepository printers) {
 			_printers = printers;
 		}
+
 		[HttpGet]
 		public ActionResult<List<Printer>> Get() {
 			return Ok(_printers.GetPrinters());

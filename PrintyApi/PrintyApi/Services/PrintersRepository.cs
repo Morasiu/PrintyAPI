@@ -11,6 +11,7 @@ namespace PrintyApi.Services {
 					Latitude = 50.050446342506014,
 					Longitude = 19.94278579652964,
 					PhoneNumber = "123456789",
+					ServiceTypes = new [] { ServiceType.Print2D },
 					Address = new Address {
 						StreetNumber = "15", 
 						Street = "Krakowska", 
@@ -40,6 +41,7 @@ namespace PrintyApi.Services {
 					Latitude = 50.05656237616528, 
 					Longitude = 19.94217038753566,
 					PhoneNumber = "123456789",
+					ServiceTypes = new [] { ServiceType.Print3D },
 					Address = new Address {
 						StreetNumber = "6",
 						Street = "Świętego Sebastiana", 
@@ -69,6 +71,16 @@ namespace PrintyApi.Services {
 					Latitude = 50.05656237616683,
 					Longitude = 19.935061177926688,
 					PhoneNumber = "123456789",
+					ServiceTypes = new [] { ServiceType.Scanner },
+					Services = new List<PrintService> {
+						new PrintService {
+							Dimension = Dimension.TwoDimensional,
+							Color = PrintColor.BlackAndWhite,
+							PrintMaterial = PrintMaterial.BoldPaper,
+							Size = PrintSize.A4,
+							Price = 0.70m
+						}
+					},
 					Address = new Address {
 						StreetNumber = "1",
 						HouseNumber = "2",

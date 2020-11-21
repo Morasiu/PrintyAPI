@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace PrintyApi.Models.Printers {
 	public class Printer {
@@ -11,6 +10,11 @@ namespace PrintyApi.Models.Printers {
 		public string Email { get; set; }
 		public Address Address { get; set; }
 		public List<PrintService> Services { get; set; }
+		public ServiceType[] ServiceTypes { get; set; }
+	}
+
+	public enum ServiceType {
+		Print2D, Print3D, Scanner
 	}
 
 	public class PrintService {
