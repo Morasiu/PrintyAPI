@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using PrintyApi.Models.Printers;
 
-namespace PrintyApi.Services {
+namespace PrintyApi.Models.Printers {
 	public class PrintersRepository {
 		public List<Printer> GetPrinters() {
 			var printers = new List<Printer> {
@@ -71,7 +70,7 @@ namespace PrintyApi.Services {
 					Latitude = 50.05656237616683,
 					Longitude = 19.935061177926688,
 					PhoneNumber = "123456789",
-					ServiceTypes = new [] { ServiceType.Scanner },
+					ServiceTypes = new [] { ServiceType.Print2D },
 					Services = new List<PrintService> {
 						new PrintService {
 							Dimension = Dimension.TwoDimensional,
